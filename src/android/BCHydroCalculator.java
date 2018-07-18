@@ -30,7 +30,8 @@ public class BCHydroCalculator extends CordovaPlugin {
                 double p1 = Double.parseDouble(args.getJSONObject(0).getString("param1"));
                 int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
                 double energyUsed = p1 * p2 / KILOWATT_TO_WATT;
-                double cost = energyUsed * RATE_PER_KWH;
+                Double energyRate = energyUsed * RATE_PER_KWH;
+                int cost = energyRate.intValue();
                 callback.success("", cost);
             } 
             catch (Exception e) {
@@ -42,4 +43,4 @@ public class BCHydroCalculator extends CordovaPlugin {
         }
 
     }
-}
+}   
