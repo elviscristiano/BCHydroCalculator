@@ -28,7 +28,7 @@ public class BCHydroCalculator extends CordovaPlugin {
                 final double RATE_PER_KWH = 0.1065;
                 final int KILOWATT_TO_WATT = 1000;
                 double p1 = Double.parseDouble(args.getJSONObject(0).getString("param1"));
-                int p2 = Integer.parseInt(args.getJSONObject(0).getString("param2"));
+                double p2 = Double.parseDouble(args.getJSONObject(0).getString("param2"));
                 double energyUsed = p1 * p2 / KILOWATT_TO_WATT;
                 double energyRate = energyUsed * RATE_PER_KWH;
                 String cost = String.valueOf(energyRate);
